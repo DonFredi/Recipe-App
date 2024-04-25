@@ -2,7 +2,8 @@ import {
   Route,
   RouterProvider,
   createBrowserRouter,
-  createRoutesFromElements
+  createRoutesFromElements,
+  Link
 }
   from 'react-router-dom'
 
@@ -10,13 +11,10 @@ import {
 //LAYOUTS
 import RootLayout from './Layouts/RootLayout'
 //PAGES
-
 import Home from './pages/Home';
-import Recipes from './pages/Recipes'
-import Contact from './pages/Contact';
+import RecipeCard from './pages/RecipeCard';
 import NotFound from './pages/NotFound';
-import Products from './pages/Products';
-import Cart from './pages/Cart';
+
 import { DataProvider } from './pages/DataContext';
 
 function App() {
@@ -25,33 +23,8 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
-
         <Route index element={<Home />} />
-        <Route
-          path="products"
-          /* errorElement={<NotFound />}*/
-          element={
-            <Products
-            />} >
-
-          <Route
-            /* path="/products/:id"*/
-            element={<Image />}
-
-          />
-        </Route>
-        <Route path="recipes" element={
-          <Recipes
-          />}
-
-
-        />
-        <Route
-          path="cart"
-          element={<Cart />}
-        />
-        <Route path="contact" element={<Contact />} />
-
+        <Route path="recipe/:query" element={<RecipeCard />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )
@@ -60,7 +33,9 @@ function App() {
     <div>
       <DataProvider>
         <RouterProvider router={router}>
-          <RootLayout />
+          <RootLayout>
+            <Link to="/">Home</Link>
+          </RootLayout>
         </RouterProvider>
       </DataProvider>
     </div>

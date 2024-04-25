@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom'
+import React from 'react'
+
 const NotFound = () => {
     return (
-        <div>
-            <h2 className='text-center font-bold py-12'>Page Not Found</h2>
-            <p className='text-blue-800 underline m-5 py-8 text-center'><Link to="/">Visit the Homepage.</Link></p>
-
-        </div >
+        <div className='text-yellow-400'>
+            <h1>404 Not Found</h1>
+        </div>
     )
 }
 

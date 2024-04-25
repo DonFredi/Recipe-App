@@ -2,108 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/*#selected-product {
-    position: absolute;
-    top: 50%;
-    left: -100%;
-
-    transform: translateY(-50%);
-    transition: left 0.5s ease-in-out;
-
-}*/
-
-#logo {
-    font-family: "Pacifico", cursive;
-    font-style: normal;
-}
-
-.tm {
-    font-size: smaller;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-
-
-}
-
 body {
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-#logo {
-    font-family: fantasy;
-    line-height: 1.3rem;
+    justify-content: start;
 }
 
 #root {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-
-}
-
-.activeNavLink {
-    border-bottom: 2px solid yellow;
-}
-
-/* Sidebar */
-#sidebar {
-    position: fixed;
-    top: 0;
-    width: 50%;
-    /* Occupies 50% of the page width */
-    height: 100vh;
-    /* Full height of the viewport */
-    background-color: #f0f0f0;
-    z-index: 1000;
-    overflow-x: hidden;
-    transition: transform 0.9s ease;
-    /* Smooth transition animation for both opening and closing */
-    transform: translateX(-100%);
-    /* Initially off-screen */
-}
-
-#sidebar.open {
-    transform: translateX(0);
-    /* Moves the sidebar to the left to show */
-}
-
-
-@media screen and (max-width :801px) {
-    #testimonials {
-        flex-wrap: wrap;
-    }
-
-    #section {
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    #section>div {
-        width: 100%;
-    }
-
-    #article {
-        flex-wrap: wrap;
-        padding: 3rem;
-    }
-
-    #article>div {
-        width: 100%;
-        padding: 1rem;
-    }
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    flex-grow: 1;
 }

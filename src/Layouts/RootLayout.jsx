@@ -1,72 +1,61 @@
-import { Link, Outlet } from 'react-router-dom';
-import { useContext } from 'react';
-import DataContext from '../pages/DataContext';
-
-import Header from '../pages/Header';
+import { Link, Outlet } from "react-router-dom";
+import SearchInput from "../components/SearchInput";
+import { useState } from "react";
+import useWindowSize from "../components/useWindowSize";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const RootLayout = () => {
-    const { state } = useContext(DataContext);
+    const [topBarOpen, setTopBarOpen] = useState(false);
+    const { width } = useWindowSize();
 
-
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
 
 
     return (
-        <div className='flex justify-around flex-col w-[100%] text-l'>
-            <Header />
+        <div className="flex justify-start flex-col h-[100vh]">
+            <header className="flex justify-between gap-x-4 flex-row p-5 bg-slate-800 items-center">
+                <h1 id="title" className="text-yellow-300 font-bold text-3xl">RECIPE APP</h1>
+                <div className="flex flex-row justify-between gap-x-6 items-center">
+                    <SearchInput />
+                    {width < 600 ?
+                        <FontAwesomeIcon icon={faBars}
+                            className="text-yellow-400 text-3xl p-3 mb-2 hover:bg-red-600 rounded-sm"
+                            onClick={() => setTopBarOpen(!topBarOpen)}
+                        /> :
+                        <Link
+                            to="/"
+                            className="text-white p-3 bg-red-500 rounded-sm text-sm font-bold hover:bg-red-700">Home</Link>
+                    }
 
+                </div>
 
-            <main className='bg-white-900 w-[100%] my-9'>
+            </header>
+            {
+                topBarOpen &&
+                <div className="top-0 left-0 flex justify-start flex-col items-center bg-slate-400 h-[20%] p-5 z-99">
+                    <Link
+                        to="/"
+                        onClick={() => setTopBarOpen(!topBarOpen)}
+                        className="hover:bg-yellow-400 w-[100%] text-center">Home</Link>
+                    <Link
+                        to="recipes"
+                        onClick={() => setTopBarOpen(!topBarOpen)}
+                        className="hover:bg-yellow-400 w-[100%] text-center">Recipes</Link>
+                    <Link class-Name="hover:bg-yellow-400 w-[100%] text-center">Login</Link>
+                    <Link className="hover:bg-yellow-400 w-[100%] text-center">Sign Up</Link>
+                </div>
+
+            }
+            <main className="bg-slate-800 p-2">
                 <Outlet />
             </main>
-            <footer className='h-fit  bg-yellow-400 p-3 text-sm font-light'>
-
-                <div className='flex justify-evenly flex-col mb-4 p-3 md:flex-row'>
-
-                    <div className='flex justify-start flex-col gap-1 font-light mt-5 text-lg text-blue-800'>
-                        <h3 className='mb-1'>Socials</h3>
-                        <Link>Facebook</Link>
-                        <Link>Instagram</Link>
-                        <Link>TikTok</Link>
-                        <Link>Snapchat</Link>
-                        <Link>X</Link>
-                        <Link>LinkedIn</Link>
-                    </div>
-                    <div className='flex justify-start flex-col gap-1 font-light mt-5 text-lg text-blue-800'>
-                        <h3 className='mb-1'>Products</h3>
-                        <Link>Peanut Butter</Link>
-                        <Link>Roasted Peanuts</Link>
-                        <Link>Ground Peanuts</Link>
-                        <Link>Raw Peanuts</Link>
-                        <Link>Merchandise</Link>
-                        <Link>How it's made</Link>
-                    </div>
-
-                    <div className='flex justify-start flex-col gap-1 font-light mt-5 text-lg text-blue-800'>
-                        <h3 className='mb-1'>Company</h3>
-                        <Link>About</Link>
-                        <Link>Contact</Link>
-                        <Link>Recipes</Link>
-                        <Link>Blog</Link>
-                        <Link>Terms & Conditions</Link>
-                        <Link>Privacy Policy</Link>
-                    </div>
-
-
-                </div>
-
-                <hr
-                    className='my-2 '
-                />
-                <div className='flex justify-center flex-row px-2'>
-                    <p className='font-bold text-blue-800'>@{currentYear} Fralon Peanuts. All rights reserved.</p>
-
-                </div>
+            <footer className="bg-slate-800 flex justify-center gap-x-3 flex-row text-yellow-300 h-[50px] items-center">
+                <Link className=" underline hover:no-underline p-2">About Us</Link>
+                <Link className="underline hover:no-underline p-2">Contacts</Link>
+                <Link className="underline hover:no-underline p-2">Blog</Link>
             </footer>
-
         </div >
-    )
+    );
 }
 
-export default RootLayout
+export default RootLayout;
