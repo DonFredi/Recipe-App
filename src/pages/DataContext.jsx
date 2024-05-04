@@ -1,7 +1,6 @@
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
 import useWindowSize from '../components/useWindowSize';
-
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
@@ -9,6 +8,18 @@ export const DataProvider = ({ children }) => {
 
     const [error, setError] = useState(null);
     const [recipes, setRecipes] = useState([]);
+    const [selectedRecipe, setSelectedRecipe] = useState(null); // Change to null as it's a single recipe
+
+
+    // Function to set the selected recipe
+    const handleRecipeClick = (recipe) => {
+        setSelectedRecipe(recipe);
+        console.log(selectedRecipe)
+    };
+
+    const handleBackButtonClick = () => {
+        setSelectedRecipe(null);
+    };
 
     // Define your application ID and application key
     const APP_ID = '2a92d389';
@@ -63,7 +74,11 @@ export const DataProvider = ({ children }) => {
                 handleSubmit,
                 recipes,
                 error,
-                width
+                width,
+                selectedRecipe,
+                setSelectedRecipe,
+                handleRecipeClick,
+                handleBackButtonClick
             }}
         >
             {children}

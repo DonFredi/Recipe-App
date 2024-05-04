@@ -13,8 +13,8 @@ const RootLayout = () => {
 
     return (
         <div className="flex justify-start flex-col h-[100vh]">
-            <header className="flex justify-between gap-x-4 flex-row p-5 bg-slate-800 items-center">
-                <h1 id="title" className="text-yellow-300 font-bold text-3xl">RECIPE APP</h1>
+            <header className="flex justify-between gap-x-4 flex-row p-5 bg-slate-800 items-center border-b-2">
+                <h1 id="title" className="text-yellow-300 font-bold text-3xl font-sans">RECIPE APP</h1>
                 <div className="flex flex-row justify-between gap-x-6 items-center">
                     <SearchInput />
                     {width < 600 ?
