@@ -10,7 +10,7 @@ const Home = () => {
     const { recipes } = useContext(DataContext);
 
     return (
-        <div className=' text-yellow-400 p-3'>
+        <div className=' text-yellow-400 p-3 h-[100vh]'>
             <h2>Featured Recipes</h2>
             <Form />
 
