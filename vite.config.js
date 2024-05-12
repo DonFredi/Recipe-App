@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/Recipe-App/',
+  base: '/Donfredi.github.io/',
   build: {
     outDir: 'build',
   },
