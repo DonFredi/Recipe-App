@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
-import DataContext from './DataContext'
+import { Link } from 'react-router-dom'
 
 const NotFound = () => {
-    const { error } = useContext(DataContext)
+
 
     return (
-        <div className='text-yellow-400'>
-            <h1>404 Not Found</h1>
-            {error &
-                <p>{error}</p>
-            }
+        <div className=' text-center py-3 h-[100vh]'>
+            <h1 className='mb-10 text-3xl font-bold text-center'> Page Not Found</h1>
+            <Link
+                to="/"
+                className='underline py-3 hover:no-underline'
+            >Visit Homepage</Link>
         </div>
     )
 }

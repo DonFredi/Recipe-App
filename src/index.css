@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 body {
-    display: flex;
-    justify-content: start;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-#root {
-    font-family: 'Times New Roman', Times, serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-size: large;
-    font-style: normal;
-    flex-grow: 1;
+html {
+    scroll-behavior: smooth;
 }
