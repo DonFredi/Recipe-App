@@ -57,7 +57,7 @@ const Faqs = () => {
                         </button>
                     </p>
                     {openFaqIndex === index && (
-                        <div className='mt-4 gap-y-2 p-2'>
+                        <div className='mt-4 gap-y-2 p-4'>
                             <h2 className="text-lg font-bold">Topic : {faq.title}</h2>
                             <p className="text-gray-800">{faq.response}</p>
                         </div>

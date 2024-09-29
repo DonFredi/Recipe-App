@@ -77,7 +77,7 @@ const Main = () => {
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}  // Smooth transition
                     >
-                        <h2 className="text-4xl font-bold text-center my-20 ">Benefits of Yoga</h2>
+                        <h2 className="text-4xl font-bold text-center my-16">Benefits of Yoga</h2>
                     </motion.div>
                     <motion.div
                         viewport={{
@@ -88,7 +88,7 @@ const Main = () => {
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}  // Smooth transition
                     >
-                        <p className='my-2'>Yoga offers a holistic approach to wellness, blending physical, mental, and spiritual practices. By incorporating yoga into your daily routine, you can experience improved flexibility, enhanced strength, and better posture. Beyond physical health, yoga helps reduce stress, increase mental clarity, and promote inner peace. Whether you are looking to boost your energy, balance your body, or find calm, yoga provides a path to greater well-being.</p></motion.div>
+                        <p className='my-6'>Yoga offers a holistic approach to wellness, blending physical, mental, and spiritual practices. By incorporating yoga into your daily routine, you can experience improved flexibility, enhanced strength, and better posture. Beyond physical health, yoga helps reduce stress, increase mental clarity, and promote inner peace. Whether you are looking to boost your energy, balance your body, or find calm, yoga provides a path to greater well-being.</p></motion.div>
                 </div>
                 <motion.div
                     viewport={{
